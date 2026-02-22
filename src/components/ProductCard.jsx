@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const ProductCard = ({product}) => {
+export const ProductCard = ({ product }) => {
   return (
     <div className="product-card">
       <img src={product.image} alt="" className="product-card-image" />

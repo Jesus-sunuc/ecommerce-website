@@ -6,8 +6,7 @@ export const Home = () => {
   return (
     <div className="page">
       <div className="home-hero">
-        <h1 className="home-tittle">Welcome to ShopHub</h1>
-        <p className="home-subtitle">
++        <h1 className="home-title">Welcome to ShopHub</h1>        <p className="home-subtitle">
           Discover amazing products at great prices
         </p>
       </div>
