@@ -1,6 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
-export const AuthContext = createContext(null);
+const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
       (u) => u.email === email && u.password === password,
     );
 
-    if(!user) {
+    if (!user) {
       return { success: false, message: "Invalid email or password" };
     }
 
@@ -53,4 +53,9 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
+};
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  return context;
 };
